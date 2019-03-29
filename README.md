@@ -54,7 +54,7 @@ Apply this set of loaders to your `webpack.config.js`:
 #### for ember-webpack-loaders/htmlbars-loader
 
 * __appPath__: Path for your ember app. Default assuming `webpack.config.js` in root folder and `./app`
-* __templateCompiler__: default 'components-ember/ember-template-compiler.js'
+* __templateCompiler__: default 'ember-source/dist/ember-template-compiler.js'
 
 #### for ember-webpack-loaders/inject-templates-loader
 

@@ -2,18 +2,18 @@ var path = require('path')
 var loaderUtils = require('loader-utils')
 var HtmlbarsCompiler = require('ember-cli-htmlbars')
 
-var DEFAULT_TEMPLATE_COMPILER = 'components-ember/ember-template-compiler.js'
+var DEFAULT_TEMPLATE_COMPILER = 'ember-source/dist/ember-template-compiler.js'
 var templateTree
 var appPath
 
 /*
  * options:
  *  - appPath: default assuming webpack.config.js in root folder + ./app
- *  - templateCompiler: default 'components-ember/ember-template-compiler.js'
+ *  - templateCompiler: default 'ember-source/dist/ember-template-compiler.js'
  */
 module.exports = function(source) {
   this.cacheable && this.cacheable()
-  var options = loaderUtils.getOptions(this);
+  var options = Object.assign({}, loaderUtils.getOptions(this));
   var appPath = (options.appPath || 'app').replace(/\/$/, '')
   var templatesFolder = path.join(appPath, 'templates')
 
